@@ -1,0 +1,111 @@
+
+
+CSE 320 Spring 2014
+
+Computer Project #2 -- Combinational Circuits (Part I)
+
+a) Give your name and MSU PID:
+
+  Name: Alex Hill (Alexander Hill)
+
+  MSU PID: A45202999
+
+
+b) Complete the following truth tables to describe the Boolean functions which
+form the basis for your combinational circuit.  For each function, replace
+the hyphens with the appropriate entry (0, 1 or X), where X represents the
+"don't care" condition.
+
+  w x y z | P() a() b() c() d() e() f() g()
+  --------+--------------------------------
+  0 0 0 0 |  1   1   1   1   1   1   1   1
+  0 0 0 1 |  0   X   X   X   X   X   X   X
+  0 0 1 0 |  1   1   1   0   1   1   0   1
+  0 0 1 1 |  0   X   X   X   X   X   X   X
+  0 1 0 0 |  1   0   1   1   0   0   1   1
+  0 1 0 1 |  1   1   0   1   1   0   1   1
+  0 1 1 0 |  0   X   X   X   X   X   X   X
+  0 1 1 1 |  0   X   X   X   X   X   X   X
+  1 0 0 0 |  0   X   X   X   X   X   X   X  
+  1 0 0 1 |  1   1   1   1   1   0   1   1
+  1 0 1 0 |  1   1   1   1   0   1   1   1
+  1 0 1 1 |  0   X   X   X   X   X   X   X
+  1 1 0 0 |  0   X   X   X   X   X   X   X
+  1 1 0 1 |  0   X   X   X   X   X   X   X
+  1 1 1 0 |  0   X   X   X   X   X   X   X
+  1 1 1 1 |  0   X   X   X   X   X   X   X 
+
+Note:  in the truth table, "P()" represents the "Present" indicator, "a()"
+represents the LED segment labeled "a", and so on.
+
+
+c) Complete the following Karnaugh maps for your Boolean functions.  For each
+input combination, replace the hyphen with the appropriate entry (0, 1 or X).
+
+
+   P()  | y'z'| y'z | yz  | yz' |           a()  | y'z'| y'z | yz  | yz' |
+   -----+-----+-----+-----+-----+           -----+-----+-----+-----+-----+
+   w'x' |  1  |  0  |  0  |  1  |           w'x' |  1  |  X  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   w'x  |  1  |  1  |  0  |  0  |           w'x  |  0  |  1  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx   |  0  |  0  |  0  |  0  |           wx   |  X  |  X  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx'  |  0  |  1  |  0  |  1  |           wx'  |  X  |  1  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+
+
+   b()  | y'z'| y'z | yz  | yz' |           c()  | y'z'| y'z | yz  | yz' |
+   -----+-----+-----+-----+-----+           -----+-----+-----+-----+-----+
+   w'x' |  1  |  X  |  X  |  1  |           w'x' |  1  |  X  |  X  |  0  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   w'x  |  1  |  0  |  X  |  X  |           w'x  |  1  |  1  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx   |  X  |  X  |  X  |  X  |           wx   |  X  |  X  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx'  |  X  |  1  |  X  |  1  |           wx'  |  X  |  1  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+
+
+   d()  | y'z'| y'z | yz  | yz' |           e()  | y'z'| y'z | yz  | yz' |
+   -----+-----+-----+-----+-----+           -----+-----+-----+-----+-----+
+   w'x' |  1  |  X  |  X  |  1  |           w'x' |  1  |  X  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   w'x  |  0  |  1  |  X  |  X  |           w'x  |  0  |  0  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx   |  X  |  X  |  X  |  X  |           wx   |  X  |  X  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx'  |  X  |  1  |  X  |  0  |           wx'  |  X  |  0  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+
+
+   f()  | y'z'| y'z | yz  | yz' |           g()  | y'z'| y'z | yz  | yz' |
+   -----+-----+-----+-----+-----+           -----+-----+-----+-----+-----+
+   w'x' |  1  |  X  |  X  |  0  |           w'x' |  1  |  X  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   w'x  |  1  |  1  |  X  |  X  |           w'x  |  1  |  1  |  0  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx   |  X  |  X  |  X  |  X  |           wx   |  X  |  X  |  X  |  X  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+   wx'  |  X  |  1  |  X  |  1  |           wx'  |  X  |  1  |  X  |  1  |
+        +-----+-----+-----+-----+                +-----+-----+-----+-----+
+
+
+d) For each Boolean function, give the minimized sum of products expression.
+
+   P() = w'y'z' + w'xy' + wx'y'z + x'yz' 
+
+   a() = x' + z
+
+   b() = z' + w 
+
+   c() = y' + w
+
+   d() = w'x' + z
+
+   e() = x'z'
+
+   f() = y' + w
+
+   g() = y' + yz'
+
